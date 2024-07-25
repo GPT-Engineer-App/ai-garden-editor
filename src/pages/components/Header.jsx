@@ -6,6 +6,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,18 +19,23 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
+    <motion.header 
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md dark:bg-gray-900/80 supports-[backdrop-filter]:bg-white/60"
+    >
+      <div className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex">
           <a className="mr-6 flex items-center space-x-2" href="/">
-            <span className="hidden font-bold sm:inline-block">AI Web Editor</span>
+            <span className="hidden font-bold sm:inline-block gradient-text">AI Web Editor</span>
           </a>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
+                className="transition-colors hover:text-purple-500 dark:hover:text-purple-400"
               >
                 {item.name}
               </a>
@@ -39,7 +45,7 @@ const Header = () => {
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button
-              variant="outline"
+              variant="ghost"
               size="icon"
               className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
             >
@@ -53,7 +59,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="transition-colors hover:text-foreground/80 text-foreground/60"
+                  className="transition-colors hover:text-purple-500 dark:hover:text-purple-400"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
@@ -64,11 +70,13 @@ const Header = () => {
         </Sheet>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none">
-            <Button className="hidden md:inline-flex">Get Started</Button>
+            <Button className="hidden md:inline-flex bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white">
+              Get Started
+            </Button>
           </div>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
