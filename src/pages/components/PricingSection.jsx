@@ -13,13 +13,13 @@ const pricingPlans = [
     name: "Pro",
     price: "$19",
     features: ["Advanced AI features", "Unlimited pages", "Priority support", "Custom domain"],
-    color: "from-purple-400 to-purple-600",
+    color: "from-blue-500 to-blue-700",
   },
   {
     name: "Enterprise",
     price: "Custom",
     features: ["Full AI capabilities", "Dedicated account manager", "Custom integrations", "SLA"],
-    color: "from-pink-400 to-pink-600",
+    color: "from-blue-600 to-blue-800",
   },
 ];
 

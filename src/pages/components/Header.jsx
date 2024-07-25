@@ -35,7 +35,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="transition-colors hover:text-purple-500 dark:hover:text-purple-400"
+                className="transition-colors hover:text-blue-500 dark:hover:text-blue-400"
               >
                 {item.name}
               </a>
@@ -59,7 +59,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="transition-colors hover:text-purple-500 dark:hover:text-purple-400"
+                  className="transition-colors hover:text-blue-500 dark:hover:text-blue-400"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
@@ -70,7 +70,7 @@ const Header = () => {
         </Sheet>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none">
-            <Button className="hidden md:inline-flex bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white">
+            <Button className="hidden md:inline-flex bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white">
               Get Started
             </Button>
           </div>
